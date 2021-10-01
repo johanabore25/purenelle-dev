@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/purenelle-dev/static/css/main.571a4b2e.chunk.css",
-    "main.js": "/purenelle-dev/static/js/main.e9fe972a.chunk.js",
-    "main.js.map": "/purenelle-dev/static/js/main.e9fe972a.chunk.js.map",
+    "main.js": "/purenelle-dev/static/js/main.b345fef4.chunk.js",
+    "main.js.map": "/purenelle-dev/static/js/main.b345fef4.chunk.js.map",
     "runtime-main.js": "/purenelle-dev/static/js/runtime-main.86a2a006.js",
     "runtime-main.js.map": "/purenelle-dev/static/js/runtime-main.86a2a006.js.map",
     "static/css/2.b154fc9b.chunk.css": "/purenelle-dev/static/css/2.b154fc9b.chunk.css",
@@ -23,6 +23,6 @@
     "static/css/2.b154fc9b.chunk.css",
     "static/js/2.5f4c18e8.chunk.js",
     "static/css/main.571a4b2e.chunk.css",
-    "static/js/main.e9fe972a.chunk.js"
+    "static/js/main.b345fef4.chunk.js"
   ]
 }
