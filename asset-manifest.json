@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/purenelle-dev/static/css/main.571a4b2e.chunk.css",
+    "main.js": "/purenelle-dev/static/js/main.e9fe972a.chunk.js",
+    "main.js.map": "/purenelle-dev/static/js/main.e9fe972a.chunk.js.map",
+    "runtime-main.js": "/purenelle-dev/static/js/runtime-main.86a2a006.js",
+    "runtime-main.js.map": "/purenelle-dev/static/js/runtime-main.86a2a006.js.map",
+    "static/css/2.b154fc9b.chunk.css": "/purenelle-dev/static/css/2.b154fc9b.chunk.css",
+    "static/js/2.5f4c18e8.chunk.js": "/purenelle-dev/static/js/2.5f4c18e8.chunk.js",
+    "static/js/2.5f4c18e8.chunk.js.map": "/purenelle-dev/static/js/2.5f4c18e8.chunk.js.map",
+    "static/js/3.dc521595.chunk.js": "/purenelle-dev/static/js/3.dc521595.chunk.js",
+    "static/js/3.dc521595.chunk.js.map": "/purenelle-dev/static/js/3.dc521595.chunk.js.map",
+    "index.html": "/purenelle-dev/index.html",
+    "static/css/2.b154fc9b.chunk.css.map": "/purenelle-dev/static/css/2.b154fc9b.chunk.css.map",
+    "static/css/main.571a4b2e.chunk.css.map": "/purenelle-dev/static/css/main.571a4b2e.chunk.css.map",
+    "static/js/2.5f4c18e8.chunk.js.LICENSE.txt": "/purenelle-dev/static/js/2.5f4c18e8.chunk.js.LICENSE.txt",
+    "static/media/ITC-Bold.e1d668a6.woff": "/purenelle-dev/static/media/ITC-Bold.e1d668a6.woff",
+    "static/media/ITC-Med.b3f92e31.woff": "/purenelle-dev/static/media/ITC-Med.b3f92e31.woff",
+    "static/media/slick-theme.css": "/purenelle-dev/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.86a2a006.js",
+    "static/css/2.b154fc9b.chunk.css",
+    "static/js/2.5f4c18e8.chunk.js",
+    "static/css/main.571a4b2e.chunk.css",
+    "static/js/main.e9fe972a.chunk.js"
+  ]
+}

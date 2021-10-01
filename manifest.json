@@ -1,0 +1,25 @@
+{
+	"short_name": "Purenelle App",
+	"name": "Purenelle dev app",
+	"icons": [
+		{
+			"src": "Purenelle.ico",
+			"sizes": "64x12 32x6 24x3",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "Purenelle-Logo-Concept-1.jpg",
+			"type": "image/png",
+			"sizes": "192x32"
+		},
+		{
+			"src": "Purenelle-Logo-Concept-1.jpg",
+			"type": "image/png",
+			"sizes": "512x85"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
+}
