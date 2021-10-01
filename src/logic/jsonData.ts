@@ -6,19 +6,19 @@ export const BannerData: BannerInterface = {
 	autoChange: false,
 	slideContent: [
 		{
-			imageSrc: "assets/Images/hero-1.jpg",
+			imageSrc: "/assets/Images/hero-1.jpg",
 			primaryText: "The best wrinkle",
 			primaryText2: "is the one you never get",
 			secondaryText: "Made in South Africa",
 		},
 		{
-			imageSrc: "assets/Images/hero-2.jpg",
+			imageSrc: "/assets/Images/hero-2.jpg",
 			primaryText: "The best wrinkle",
 			primaryText2: "is the one you never get",
 			secondaryText: "Made in South Africa",
 		},
 		{
-			imageSrc: "assets/Images/hero-3.jpg",
+			imageSrc: "/assets/Images/hero-3.jpg",
 			primaryText: "The best wrinkle",
 			primaryText2: "is the one you never get",
 			secondaryText: "Made in South Africa",
