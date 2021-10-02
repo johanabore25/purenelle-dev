@@ -33,14 +33,20 @@ const NavBar = () => {
 					<Grid container direction="row" alignItems="center" justifyContent="space-between">
 						<Grid container item direction="row" alignItems="center" justifyContent="space-around" md={4}>
 							<Grid item>
+								<Link to="/" className={classes.link}>
+									<Typography color="primary">Home</Typography>
+								</Link>
+							</Grid>
+							<Grid item>
 								<Link to="/shop" className={classes.link}>
 									<Typography color="primary">Shop</Typography>
 								</Link>
 							</Grid>
 							<Grid item>
-								<Link to="/journal" className={classes.link}>
-									<Typography color="primary">Journal</Typography>
-								</Link>
+								<Typography color="primary">Our Journal</Typography>
+							</Grid>
+							<Grid item>
+								<Typography color="primary">Our Story</Typography>
 							</Grid>
 							<Grid item>
 								<Link to="/contact" className={classes.link}>

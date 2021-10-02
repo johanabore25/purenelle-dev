@@ -63,6 +63,8 @@ export default makeStyles((theme: Theme) =>
 		radioDiv: {
 			display: "flex",
 			justifyContent: "center",
+			textAlign: "center",
+			opacity: 0.6,
 		},
 		image: {
 			objectFit: "cover",

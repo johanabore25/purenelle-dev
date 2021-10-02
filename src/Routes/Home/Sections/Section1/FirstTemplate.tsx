@@ -11,8 +11,8 @@ const FirstTemplate = () => {
 			container
 			spacing={3}
 			direction="row"
-			justifyContent="center"
-			style={{ width: "80%", position: "absolute", marginTop: "6rem" }}
+			justifyContent="space-between"
+			style={{ width: "90%", position: "absolute", marginTop: "6rem" }}
 		>
 			{homeProducts.map((product) => (
 				<Grid item md={3} key={product.id}>
@@ -25,7 +25,7 @@ const FirstTemplate = () => {
 				</Grid>
 			))}
 			<Grid item md={12} container justifyContent="flex-end" alignItems="center">
-				<Grid item md={4}>
+				<Grid item md={2}>
 					<Link to="/shop" style={{ textDecoration: "none", width: "fit-content" }}>
 						<Button
 							color="secondary"

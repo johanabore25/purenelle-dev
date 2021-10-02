@@ -76,9 +76,10 @@ const Banner = () => {
 													pointerEvents: "fill",
 													cursor: "pointer",
 													width: "fit-content",
+													opacity: 0.6,
 												}}
 											>
-												<Icon.ArrowLeftCircle size="48px" color="#ffffff" />
+												<Icon.ArrowLeft size="48px" color="#ffffff" />
 											</div>
 											<div
 												onClick={() => handleSlideChange(-1)}
@@ -86,18 +87,19 @@ const Banner = () => {
 													pointerEvents: "fill",
 													cursor: "pointer",
 													width: "fit-content",
+													opacity: 0.6,
 												}}
 											>
-												<Icon.ArrowRightCircle size="48px" color="#ffffff" />
+												<Icon.ArrowRight size="48px" color="#ffffff" />
 											</div>
-										</div>
-										<div className={classes.radioDiv}>
-											<Radio checked={currentIndex === 0} style={{ color: "white" }} />
-											<Radio checked={currentIndex === 1} style={{ color: "white" }} />
-											<Radio checked={currentIndex === 2} style={{ color: "white" }} />
 										</div>
 									</div>
 								</div>
+								{/* <div className={classes.radioDiv}>
+									<Radio checked={currentIndex === 0} style={{ color: "white" }} />
+									<Radio checked={currentIndex === 1} style={{ color: "white" }} />
+									<Radio checked={currentIndex === 2} style={{ color: "white" }} />
+								</div> */}
 							</div>
 						);
 					})}

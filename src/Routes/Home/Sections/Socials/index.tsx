@@ -8,14 +8,14 @@ const Socials = () => {
 			justifyContent="center"
 			alignItems="center"
 			spacing={2}
-			style={{ width: "80%", position: "absolute", left: "4rem", marginTop: "6rem" }}
+			style={{ width: "80%", position: "absolute", marginTop: "6rem" }}
 		>
 			<Grid item md={6}>
 				<img
 					src="/assets/Images/hero-1.jpg"
 					width="100%"
 					alt="one"
-					height="540px"
+					height="565px"
 					style={{ objectFit: "cover" }}
 				/>
 			</Grid>

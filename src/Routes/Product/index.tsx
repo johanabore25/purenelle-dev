@@ -97,7 +97,7 @@ const Product = ({ match }: RouteComponentProps<TParams>) => {
 								<img src={ProductData[2].imgSrc} alt="time" width="100%" />
 							</Grid>
 							<Grid item md={3}>
-								<img src={ProductData[3].imgSrc} alt="time" width="100%" />
+								<img src={ProductData[0].imgSrc} alt="time" width="100%" />
 							</Grid>
 						</Grid>
 						<Grid
