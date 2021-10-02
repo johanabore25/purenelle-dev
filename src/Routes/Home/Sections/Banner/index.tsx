@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 // Material Core
-import { Typography, Radio, Button } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as Icon from "react-feather";
