@@ -1,41 +1,53 @@
 import React from "react";
 import { Typography, Grid, TextField, Button } from "@material-ui/core";
 import { SocialIcon } from "react-social-icons";
+import useStyles from "./styles";
 
 const Footer = () => {
+	const classes = useStyles({});
+
 	return (
-		<div
-			style={{ width: "100%", height: "50vh", backgroundColor: "#575757", overflowX: "hidden", padding: "2rem" }}
-		>
-			<Grid container justifyContent="space-between" alignItems="flex-start" style={{ height: "100%" }}>
-				<Grid item md={4}>
-					<Typography variant="h5" style={{ color: "white", fontWeight: 700 }} gutterBottom>
+		<div className={classes.mainDiv}>
+			<Grid container justifyContent="space-between" alignItems="flex-start" className={classes.heightDiv}>
+				<Grid item md={2}>
+					<Typography variant="h5" className={classes.boldText} gutterBottom>
+						Policies
+					</Typography>
+					<Typography variant="subtitle1" className={classes.text} gutterBottom>
+						Shipping
+					</Typography>
+					<Typography variant="subtitle1" className={classes.text} gutterBottom>
+						Privacy Policies
+					</Typography>
+					<Typography variant="subtitle1" className={classes.text} gutterBottom>
+						Terms of Service
+					</Typography>
+					<Typography variant="subtitle1" className={classes.text} gutterBottom>
+						Refunds and Returns
+					</Typography>
+				</Grid>
+				<Grid item md={2}>
+					<Typography variant="h5" className={classes.boldText} gutterBottom>
 						Help
 					</Typography>
-					<Typography variant="subtitle1" style={{ color: "white" }} gutterBottom>
-						Refund policy
+					<Typography variant="subtitle1" className={classes.text} gutterBottom>
+						FAQs
 					</Typography>
-					<Typography variant="subtitle1" style={{ color: "white" }} gutterBottom>
-						Terms of service
+					<Typography variant="subtitle1" className={classes.text} gutterBottom>
+						Covid-19
 					</Typography>
-					<Typography variant="subtitle1" style={{ color: "white" }} gutterBottom>
-						Privacy policy
+					<Typography variant="subtitle1" className={classes.text} gutterBottom>
+						Contact Us
 					</Typography>
 				</Grid>
 				<Grid item md={6} container justifyContent="flex-end" alignItems="center" spacing={1}>
 					<Grid item md={12}>
-						<Typography variant="h5" style={{ color: "white", fontWeight: 700 }}>
+						<Typography variant="h5" className={classes.boldText}>
 							Join Our Newsletter
 						</Typography>
 					</Grid>
 					<Grid item md={8}>
-						<TextField
-							variant="filled"
-							label="Email"
-							fullWidth
-							size="small"
-							style={{ backgroundColor: "#ffffff" }}
-						/>
+						<TextField variant="filled" label="Email" fullWidth size="small" className={classes.whiteBG} />
 					</Grid>
 					<Grid item md={4}>
 						<Button variant="contained" color="secondary" size="large" fullWidth>
@@ -45,25 +57,45 @@ const Footer = () => {
 				</Grid>
 				<Grid item md={12} container justifyContent="flex-end" alignItems="center">
 					<Grid item md={6} container justifyContent="flex-end" alignItems="center">
-						<Grid item md={1} style={{ textAlign: "right" }}>
-							<SocialIcon network="facebook" bgColor="#ffffff" />
+						<Grid item md={1} className={classes.rightAlign}>
+							<SocialIcon
+								network="facebook"
+								bgColor="#ffffff"
+								url="https://facebook.com/purenellecosmetics"
+								target="_blank"
+							/>
 						</Grid>
-						<Grid item md={1} style={{ textAlign: "right" }}>
-							<SocialIcon network="instagram" bgColor="#ffffff" />
+						<Grid item md={1} className={classes.rightAlign}>
+							<SocialIcon
+								network="instagram"
+								bgColor="#ffffff"
+								url="https://instagram.com/purenelle"
+								target="_blank"
+							/>
 						</Grid>
-						<Grid item md={1} style={{ textAlign: "right" }}>
-							<SocialIcon network="youtube" bgColor="#ffffff" />
+						<Grid item md={1} className={classes.rightAlign}>
+							<SocialIcon
+								network="youtube"
+								bgColor="#ffffff"
+								url="https://www.youtube.com/channel/UCFJMgTHSmAYc3"
+								target="_blank"
+							/>
 						</Grid>
-						<Grid item md={1} style={{ textAlign: "right" }}>
+						<Grid item md={1} className={classes.rightAlign}>
 							<SocialIcon network="whatsapp" bgColor="#ffffff" />
 						</Grid>
-						<Grid item md={1} style={{ textAlign: "right" }}>
-							<SocialIcon network="linkedin" bgColor="#ffffff" />
+						<Grid item md={1} className={classes.rightAlign}>
+							<SocialIcon
+								network="linkedin"
+								bgColor="#ffffff"
+								url="https://linkedin.com/company/purenellecosmetics"
+								target="_blank"
+							/>
 						</Grid>
 					</Grid>
 				</Grid>
 				<Grid item md={12}>
-					<Typography align="center" style={{ color: "white" }}>
+					<Typography align="center" className={classes.text}>
 						&#169;2021, Purenelle Made in South Africa
 					</Typography>
 				</Grid>

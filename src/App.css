@@ -2,11 +2,27 @@
 	text-align: center;
 }
 .body {
-	background-color: #ececec;
+	background-color: #f7f8f2;
 }
 .App-logo {
 	height: 40vmin;
 	pointer-events: none;
+}
+
+@font-face {
+	font-family: "Sequel Sans Medium Head";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("./assets/fonts/Sequel-Head.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Sequel Body";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("./assets/fonts/Sequel-Body.woff") format("woff");
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,12 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { RouteComponentProps } from "react-router-dom";
-import { Grid, Typography, Button, CircularProgress } from "@material-ui/core";
+import { Grid, Typography, Button, CircularProgress, IconButton } from "@material-ui/core";
 import { ProductData } from "../../logic/jsonData";
 import { RatingView } from "react-simple-star-rating";
+import * as Icon from "react-feather";
+import useStyles from "./styles";
 
 type TParams = { id: string };
 
 const Product = ({ match }: RouteComponentProps<TParams>) => {
+	const classes = useStyles({});
 	const [loading, setLoading] = React.useState(true);
 	let { id } = match.params;
 
@@ -25,11 +29,23 @@ const Product = ({ match }: RouteComponentProps<TParams>) => {
 					<CircularProgress />
 				</div>
 			) : (
-				<div style={{ height: "100%", width: "100%", padding: "5rem" }}>
-					<Grid container justifyContent="center" spacing={2}>
+				<div className={classes.mainDiv}>
+					<Grid container justifyContent="center" spacing={1}>
+						<Grid item md={12} className={classes.closeButton}>
+							<Link to="/shop" className={classes.link}>
+								<IconButton component="span">
+									<Icon.X />
+								</IconButton>
+							</Link>
+						</Grid>
 						<Grid item md={12} container justifyContent="space-between" alignItems="flex-start">
 							<Grid item md={4} lg={4}>
-								<img src={ProductData[newId].imgSrc} width="100%" alt="yes" />
+								<img
+									src={ProductData[newId].imgSrc}
+									width="100%"
+									alt="yes"
+									className={classes.mainImg}
+								/>
 							</Grid>
 							<Grid item md={4} lg={4} container spacing={2} alignContent="space-between">
 								<Grid item md={12} container justifyContent="center">
@@ -37,7 +53,7 @@ const Product = ({ match }: RouteComponentProps<TParams>) => {
 										<Typography
 											variant="h4"
 											color="secondary"
-											style={{ fontWeight: 700 }}
+											className={classes.headerText}
 											gutterBottom
 										>
 											{ProductData[newId].longName}
@@ -65,12 +81,17 @@ const Product = ({ match }: RouteComponentProps<TParams>) => {
 
 								<Grid item md={12} container justifyContent="center">
 									<Grid item md={12}>
-										<Typography variant="h6" gutterBottom>
+										<Typography variant="h6" gutterBottom className={classes.bodyText}>
 											Ingredients
 										</Typography>
 									</Grid>
 									<Grid item md={12}>
-										<Typography color="primary" variant="h6" gutterBottom>
+										<Typography
+											color="primary"
+											variant="h6"
+											gutterBottom
+											className={classes.bodyText}
+										>
 											{ProductData[newId].ingredients}
 										</Typography>
 									</Grid>
@@ -81,80 +102,110 @@ const Product = ({ match }: RouteComponentProps<TParams>) => {
 							item
 							md={12}
 							container
+							alignItems="flex-start"
+							justifyContent="space-between"
+							className={classes.marginDiv}
+						>
+							<Grid item md={6} container>
+								<Grid item md={12}>
+									<Typography
+										color="secondary"
+										variant="h4"
+										gutterBottom
+										className={classes.headerText}
+									>
+										Main Ingredients
+									</Typography>
+								</Grid>
+								<Grid item md={12}>
+									<Typography color="primary" variant="h6" gutterBottom className={classes.bodyText}>
+										{ProductData[newId].mainIngredients}
+									</Typography>
+								</Grid>
+							</Grid>
+							<Grid item md={6}></Grid>
+						</Grid>
+						<Grid
+							item
+							md={12}
+							container
+							alignItems="flex-start"
+							justifyContent="space-between"
+							className={classes.marginDiv}
+						>
+							<Grid item container md={6}></Grid>
+							<Grid item md={6}>
+								<Grid item md={12}>
+									<Typography
+										color="secondary"
+										variant="h4"
+										gutterBottom
+										className={classes.headerText}
+									>
+										Why you will love it
+									</Typography>
+								</Grid>
+								<Grid item md={12}>
+									<Typography color="primary" variant="h6" gutterBottom className={classes.bodyText}>
+										{ProductData[newId].whyWeLoveIt}
+									</Typography>
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid
+							item
+							md={12}
+							container
+							alignItems="flex-start"
+							justifyContent="space-between"
+							className={classes.marginDiv}
+						>
+							<Grid item md={6}>
+								<Grid item md={12}>
+									<Typography
+										color="secondary"
+										variant="h4"
+										gutterBottom
+										className={classes.headerText}
+									>
+										How to use it
+									</Typography>
+								</Grid>
+								<Grid item md={12}>
+									<Typography color="primary" variant="h6" gutterBottom className={classes.bodyText}>
+										{ProductData[newId].howToUse}
+									</Typography>
+								</Grid>
+							</Grid>
+							<Grid item md={6} container></Grid>
+						</Grid>
+						<Grid
+							item
+							md={12}
+							container
 							spacing={2}
 							justifyContent="space-between"
-							style={{ marginTop: "2rem" }}
+							className={classes.marginDiv}
 						>
 							<Grid item md={12}>
-								<Typography color="secondary" align="center" variant="h5" style={{ fontWeight: 700 }}>
+								<Typography
+									color="secondary"
+									align="center"
+									variant="h4"
+									className={classes.headerText}
+									gutterBottom
+								>
 									Related Products
 								</Typography>
 							</Grid>
 							<Grid item md={3}>
-								<img src={ProductData[1].imgSrc} alt="time" width="100%" />
+								<img src={ProductData[1].imgSrc} alt="time" width="100%" className={classes.mainImg} />
 							</Grid>
 							<Grid item md={3}>
-								<img src={ProductData[2].imgSrc} alt="time" width="100%" />
+								<img src={ProductData[2].imgSrc} alt="time" width="100%" className={classes.mainImg} />
 							</Grid>
 							<Grid item md={3}>
-								<img src={ProductData[0].imgSrc} alt="time" width="100%" />
-							</Grid>
-						</Grid>
-						<Grid
-							item
-							md={12}
-							container
-							alignItems="flex-start"
-							justifyContent="space-between"
-							style={{ marginTop: "5rem" }}
-						>
-							<Grid item md={4}>
-								<Typography color="primary" variant="h6" gutterBottom style={{ fontWeight: 700 }}>
-									Main Ingredients
-								</Typography>
-							</Grid>
-							<Grid item md={4}>
-								<Typography color="primary" variant="h6" gutterBottom>
-									{ProductData[newId].mainIngredients}
-								</Typography>
-							</Grid>
-						</Grid>
-						<Grid
-							item
-							md={12}
-							container
-							alignItems="flex-start"
-							justifyContent="space-between"
-							style={{ marginTop: "5rem" }}
-						>
-							<Grid item md={4}>
-								<Typography color="primary" variant="h6" gutterBottom style={{ fontWeight: 700 }}>
-									Why we love it
-								</Typography>
-							</Grid>
-							<Grid item md={4}>
-								<Typography color="primary" variant="h6" gutterBottom>
-									{ProductData[newId].whyWeLoveIt}
-								</Typography>
-							</Grid>
-						</Grid>
-						<Grid
-							item
-							md={12}
-							container
-							alignItems="flex-start"
-							justifyContent="space-between"
-							style={{ marginTop: "5rem" }}
-						>
-							<Grid item md={4}>
-								<Typography color="primary" variant="h6" gutterBottom style={{ fontWeight: 700 }}>
-									How to use it
-								</Typography>
-							</Grid>
-							<Grid item md={4}>
-								<Typography color="primary" variant="h6" gutterBottom>
-									{ProductData[newId].howToUse}
-								</Typography>
+								<img src={ProductData[0].imgSrc} alt="time" width="100%" className={classes.mainImg} />
 							</Grid>
 						</Grid>
 					</Grid>

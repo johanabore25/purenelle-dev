@@ -1,22 +1,19 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
+import useStyles from "./styles";
 
 const Socials = () => {
+	const classes = useStyles({});
+
 	return (
-		<Grid
-			container
-			justifyContent="center"
-			alignItems="center"
-			spacing={2}
-			style={{ width: "80%", position: "absolute", marginTop: "6rem" }}
-		>
+		<Grid container justifyContent="center" alignItems="center" spacing={2} className={classes.container}>
 			<Grid item md={6}>
 				<img
 					src="/assets/Images/hero-1.jpg"
-					width="100%"
+					width="565px"
 					alt="one"
 					height="565px"
-					style={{ objectFit: "cover" }}
+					className={classes.bigImage}
 				/>
 			</Grid>
 			<Grid item md={6} container spacing={2}>
@@ -24,19 +21,19 @@ const Socials = () => {
 					<Grid item md={6}>
 						<img
 							src="/assets/Images/hero-2.jpg"
-							width="100%"
+							width="270px"
 							alt="one"
 							height="270px"
-							style={{ objectFit: "cover" }}
+							className={classes.smallImage}
 						/>
 					</Grid>
 					<Grid item md={6}>
 						<img
 							src="/assets/Images/hero-3.jpg"
-							width="100%"
+							width="270px"
 							alt="one"
 							height="270px"
-							style={{ objectFit: "cover" }}
+							className={classes.smallImage}
 						/>
 					</Grid>
 				</Grid>
@@ -44,19 +41,19 @@ const Socials = () => {
 					<Grid item md={6}>
 						<img
 							src="/assets/Images/products/Micerlla.jpg"
-							width="100%"
+							width="270px"
 							alt="one"
 							height="270px"
-							style={{ objectFit: "cover" }}
+							className={classes.smallImage}
 						/>
 					</Grid>
 					<Grid item md={6}>
 						<img
 							src="/assets/Images/products/radiance.jpg"
-							width="100%"
+							width="270px"
 							alt="one"
 							height="270px"
-							style={{ objectFit: "cover" }}
+							className={classes.smallImage}
 						/>
 					</Grid>
 				</Grid>

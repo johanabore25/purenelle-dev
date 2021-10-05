@@ -80,7 +80,7 @@ export const ProductData: ProductInterface[] = [
 	},
 	{
 		id: 3,
-		shortName: "Daily anti-ageing day moisturiser",
+		shortName: "Daily anti-ageing moisturiser",
 		longName: "DAILY ANTI-AGEING DAY MOISTURISER WITH SPF 15 + COLLAGEN BOOSTER",
 		volume: "50 ML/1.7 fl.OZ",
 		description: "Helps minimize the appearance of wrinkles and the effects of photoaging",

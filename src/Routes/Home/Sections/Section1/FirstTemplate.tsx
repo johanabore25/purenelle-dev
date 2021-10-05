@@ -4,16 +4,13 @@ import { Link } from "react-router-dom";
 import { Grid, Button } from "@material-ui/core";
 import { HomeProducts } from "../../../Shop/ProductCard";
 import { homeProducts } from "../../../../logic/jsonData";
+import useStyles from "./styles";
 
 const FirstTemplate = () => {
+	const classes = useStyles({});
+
 	return (
-		<Grid
-			container
-			spacing={3}
-			direction="row"
-			justifyContent="space-between"
-			style={{ width: "90%", position: "absolute", marginTop: "6rem" }}
-		>
+		<Grid container spacing={3} direction="row" justifyContent="space-between" className={classes.firstDiv}>
 			{homeProducts.map((product) => (
 				<Grid item md={3} key={product.id}>
 					<HomeProducts
@@ -26,12 +23,12 @@ const FirstTemplate = () => {
 			))}
 			<Grid item md={12} container justifyContent="flex-end" alignItems="center">
 				<Grid item md={2}>
-					<Link to="/shop" style={{ textDecoration: "none", width: "fit-content" }}>
+					<Link to="/shop" className={classes.link}>
 						<Button
 							color="secondary"
 							variant="contained"
 							disableElevation={false}
-							style={{ width: "100%" }}
+							className={classes.hundredWidth}
 						>
 							Explore
 						</Button>

@@ -10,6 +10,8 @@ import theme from "./theme";
 import Home from "./Routes/Home";
 import Shop from "./Routes/Shop";
 import Product from "./Routes/Product";
+// utils
+import ScrollToTop from "./ui-utils/ScrollToTop";
 
 const App = ({ location }: RouteComponentProps) => {
 	return (
@@ -17,8 +19,9 @@ const App = ({ location }: RouteComponentProps) => {
 			<>
 				<MuiThemeProvider theme={theme}>
 					<CssBaseline />
+					<ScrollToTop />
 					<NavBar />
-					<Route path="/shop" component={Shop} />
+					<Route path="/shop/:id?" component={Shop} />
 					<Route path="/product/:id?" component={Product} />
 					<Route path="/contact" />
 					<Route exact path="/" component={Home} />

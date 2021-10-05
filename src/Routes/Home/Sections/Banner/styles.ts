@@ -3,6 +3,26 @@ import { makeStyles, createStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme: Theme) =>
 	createStyles({
+		relativeDiv: {
+			position: "relative",
+		},
+		text: {
+			color: theme.palette.primary.contrastText,
+		},
+		boldText: {
+			color: theme.palette.primary.contrastText,
+			fontWeight: 700,
+		},
+		link: {
+			textDecoration: "none",
+			width: "fit-content",
+		},
+		arrow: {
+			pointerEvents: "fill",
+			cursor: "pointer",
+			width: "fit-content",
+			opacity: 0.6,
+		},
 		sliderWrapper: {
 			"& .slick-slider": {
 				height: "91vh",
@@ -54,12 +74,6 @@ export default makeStyles((theme: Theme) =>
 				textAlign: "center",
 			},
 		},
-		link: {
-			textDecoration: "none",
-		},
-		bannerFont: {
-			color: theme.palette.primary.contrastText,
-		},
 		radioDiv: {
 			display: "flex",
 			justifyContent: "center",
@@ -77,8 +91,8 @@ export default makeStyles((theme: Theme) =>
 			alignItems: "flex-end",
 			width: "100vw",
 			top: "50%",
-			paddingLeft: "0.5%",
-			paddingRight: "0.5%",
+			paddingLeft: "3rem",
+			paddingRight: "3rem",
 		},
 		textLayer: {
 			display: "flex",
@@ -92,6 +106,13 @@ export default makeStyles((theme: Theme) =>
 			justifyContent: "flex-end",
 			alignItems: "center",
 			width: "50%",
+		},
+		button: {
+			width: "100%",
+		},
+		arrowDiv: {
+			display: "flex",
+			alignItems: "center",
 		},
 	})
 );

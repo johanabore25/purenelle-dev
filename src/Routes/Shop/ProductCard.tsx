@@ -1,17 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardMedia, CardContent, CardActionArea, Typography, Grid, Divider } from "@material-ui/core";
 import { ProductInterface } from "../../logic/types";
-
-const useStyles = makeStyles({
-	root: {
-		maxWidth: 345,
-	},
-	media: {
-		height: 240,
-	},
-});
+import useStyles from "./styles";
 
 const ProductCard = ({ imgSrc, id, shortName }: Partial<ProductInterface>) => {
 	const classes = useStyles({});
@@ -21,7 +12,9 @@ const ProductCard = ({ imgSrc, id, shortName }: Partial<ProductInterface>) => {
 			<CardActionArea component={Link} to={`/product/${id}`}>
 				<CardMedia className={classes.media} image={imgSrc} title="suitable for all skins" />
 				<CardContent>
-					<Typography align="left">{shortName}</Typography>
+					<Typography align="center" className={classes.headerText} variant="subtitle2">
+						{shortName}
+					</Typography>
 				</CardContent>
 			</CardActionArea>
 		</Card>

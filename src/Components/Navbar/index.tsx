@@ -1,11 +1,13 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 // Material Core
 
 import { AppBar, Toolbar, Grid, useScrollTrigger, Typography } from "@material-ui/core";
 import useStyles from "./styles";
 // Icons
 import * as Icon from "react-feather";
+// components
+import DropDownButton from "../DropDownButton";
 
 interface Props {
 	children: React.ReactElement;
@@ -25,6 +27,11 @@ const ElevationScroll = (props: Props) => {
 
 const NavBar = () => {
 	const classes = useStyles({});
+	const history = useHistory();
+
+	const handleShopNav = (route: string, id: number) => {
+		history.push(`/${route}/${id}`);
+	};
 
 	return (
 		<ElevationScroll>
@@ -39,7 +46,11 @@ const NavBar = () => {
 							</Grid>
 							<Grid item>
 								<Link to="/shop" className={classes.link}>
-									<Typography color="primary">Shop</Typography>
+									<DropDownButton
+										text="shop"
+										list={["Hair", "Skin", "Beauty"]}
+										func={handleShopNav}
+									/>
 								</Link>
 							</Grid>
 							<Grid item>

@@ -12,8 +12,10 @@ import {
 } from "@material-ui/core";
 import { ProductData } from "../../logic/jsonData";
 import ProductCard from "./ProductCard";
+import useStyles from "./styles";
 
 const Shop = () => {
+	const classes = useStyles({});
 	const [value, setValue] = React.useState("All");
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,10 +23,16 @@ const Shop = () => {
 	};
 
 	return (
-		<div style={{ height: "100vh", padding: "3rem" }}>
+		<div className={classes.productDiv}>
 			<Grid container spacing={2}>
 				<Grid item md={12}>
-					<Typography color="secondary" align="center" gutterBottom variant="h4" style={{ fontWeight: 700 }}>
+					<Typography
+						color="secondary"
+						align="center"
+						gutterBottom
+						variant="h4"
+						className={classes.headerText}
+					>
 						All Products
 					</Typography>
 				</Grid>
@@ -49,7 +57,7 @@ const Shop = () => {
 							<MenuItem value={"Price: Low to High"}>Price: Low to High</MenuItem>
 						</TextField>
 					</Grid>
-					<Grid item md={12} container spacing={2} style={{ marginTop: "3rem" }}>
+					<Grid item md={12} container spacing={2} className={classes.productMargin}>
 						{ProductData.map((product, index) => (
 							<Grid item md={3} key={product.id}>
 								<ProductCard id={index} imgSrc={product.imgSrc} shortName={product.shortName} />

@@ -35,29 +35,25 @@ const Banner = () => {
 	};
 
 	return (
-		<div style={{ position: "relative" }}>
+		<div className={classes.relativeDiv}>
 			<div className={classes.sliderWrapper}>
 				<Slider ref={(slider) => setActiveSlider(slider)} {...settings}>
 					{slideContent.map((slide, index) => {
 						return (
-							<div key={index + 1} style={{ position: "relative" }}>
+							<div key={index + 1} className={classes.relativeDiv}>
 								<img src={slide.imageSrc} alt="concert at night" className={classes.image} />
 								<div className={classes.absoluteLayer}>
 									<div className={classes.textLayer}>
-										<Typography variant="h5" gutterBottom style={{ color: "#ffffff" }}>
+										<Typography variant="h5" gutterBottom className={classes.text}>
 											{slide.secondaryText}
 										</Typography>
-										<Typography variant="h2" style={{ fontWeight: 700, color: "#ffffff" }}>
+										<Typography variant="h2" className={classes.boldText}>
 											{slide.primaryText}
 										</Typography>
-										<Typography
-											variant="h2"
-											gutterBottom
-											style={{ fontWeight: 700, color: "#ffffff" }}
-										>
+										<Typography variant="h2" gutterBottom className={classes.boldText}>
 											{slide.primaryText2}
 										</Typography>
-										<Link to="/shop" style={{ textDecoration: "none", width: "fit-content" }}>
+										<Link to="/shop" className={classes.link}>
 											<Button
 												color="secondary"
 												variant="contained"
@@ -69,27 +65,11 @@ const Banner = () => {
 										</Link>
 									</div>
 									<div className={classes.arrowLayer}>
-										<div style={{ display: "flex", alignItems: "center" }}>
-											<div
-												onClick={() => handleSlideChange(1)}
-												style={{
-													pointerEvents: "fill",
-													cursor: "pointer",
-													width: "fit-content",
-													opacity: 0.6,
-												}}
-											>
+										<div className={classes.arrowDiv}>
+											<div onClick={() => handleSlideChange(1)} className={classes.arrow}>
 												<Icon.ArrowLeft size="48px" color="#ffffff" />
 											</div>
-											<div
-												onClick={() => handleSlideChange(-1)}
-												style={{
-													pointerEvents: "fill",
-													cursor: "pointer",
-													width: "fit-content",
-													opacity: 0.6,
-												}}
-											>
+											<div onClick={() => handleSlideChange(-1)} className={classes.arrow}>
 												<Icon.ArrowRight size="48px" color="#ffffff" />
 											</div>
 										</div>
