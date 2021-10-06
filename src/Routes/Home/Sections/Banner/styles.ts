@@ -8,10 +8,12 @@ export default makeStyles((theme: Theme) =>
 		},
 		text: {
 			color: theme.palette.primary.contrastText,
+			fontFamily: "Legs",
 		},
 		boldText: {
 			color: theme.palette.primary.contrastText,
 			fontWeight: 700,
+			fontFamily: "Legs",
 		},
 		link: {
 			textDecoration: "none",

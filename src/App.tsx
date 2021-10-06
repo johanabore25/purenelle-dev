@@ -10,6 +10,8 @@ import theme from "./theme";
 import Home from "./Routes/Home";
 import Shop from "./Routes/Shop";
 import Product from "./Routes/Product";
+import SignIn from "./Routes/Auth/Login";
+import SignUp from "./Routes/Auth/SignUp";
 // utils
 import ScrollToTop from "./ui-utils/ScrollToTop";
 
@@ -24,6 +26,8 @@ const App = ({ location }: RouteComponentProps) => {
 					<Route path="/shop/:id?" component={Shop} />
 					<Route path="/product/:id?" component={Product} />
 					<Route path="/contact" />
+					<Route path="/login" component={SignIn} />
+					<Route path="/signup" component={SignUp} />
 					<Route exact path="/" component={Home} />
 					<Footer />
 				</MuiThemeProvider>

@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { RouteComponentProps } from "react-router-dom";
+import { Link, RouteComponentProps } from "react-router-dom";
+import Slider from "react-slick";
 import { Grid, Typography, Button, CircularProgress, IconButton } from "@material-ui/core";
 import { ProductData } from "../../logic/jsonData";
 import { RatingView } from "react-simple-star-rating";
@@ -22,6 +22,22 @@ const Product = ({ match }: RouteComponentProps<TParams>) => {
 		}
 	}, [loading, newId]);
 
+	const settings = {
+		customPaging: function (i: number) {
+			return (
+				<span>
+					<img src={ProductData[newId].imgSrc} alt="images" width="100%" />
+				</span>
+			);
+		},
+		dots: true,
+		dotsClass: "slick-dots slick-thumb",
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+	};
+
 	return (
 		<div>
 			{loading ? (
@@ -38,16 +54,29 @@ const Product = ({ match }: RouteComponentProps<TParams>) => {
 								</IconButton>
 							</Link>
 						</Grid>
-						<Grid item md={12} container justifyContent="space-between" alignItems="flex-start">
-							<Grid item md={4} lg={4}>
-								<img
-									src={ProductData[newId].imgSrc}
-									width="100%"
-									alt="yes"
-									className={classes.mainImg}
-								/>
+						<Grid item md={12} container justifyContent="flex-start" alignItems="flex-start">
+							<Grid item md={4} lg={4} className={classes.sliderWrapper}>
+								<Slider {...settings}>
+									<div>
+										<img src={ProductData[newId].imgSrc} alt="product" width="100%" />
+									</div>
+									<div>
+										<img src={ProductData[newId].imgSrc} alt="product" width="100%" />
+									</div>
+									<div>
+										<img src={ProductData[newId].imgSrc} alt="product" width="100%" />
+									</div>
+								</Slider>
 							</Grid>
-							<Grid item md={4} lg={4} container spacing={2} alignContent="space-between">
+							<Grid
+								item
+								md={6}
+								lg={4}
+								container
+								spacing={2}
+								alignContent="space-between"
+								style={{ marginLeft: "8rem" }}
+							>
 								<Grid item md={12} container justifyContent="center">
 									<Grid item md={12}>
 										<Typography

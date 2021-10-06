@@ -11,7 +11,6 @@ interface button {
 
 const DropDownButton = ({ text, list, func }: button) => {
 	const classes = useStyles({});
-	console.log(list);
 
 	const handleClick = (name: string, id: number): void => {
 		func(name, name !== text ? id + 1 : id);
@@ -23,7 +22,7 @@ const DropDownButton = ({ text, list, func }: button) => {
 				<Typography color="primary" className={classes.text}>
 					{text}
 				</Typography>
-				<ChevronDown color="#7B7B7B" id="arrow" />
+				<ChevronDown color="#7B7B7B" id="arrow" size="20px" className={classes.svg} />
 			</button>
 			<ul id="list" className={classes.list}>
 				{list.map((item, index) => (

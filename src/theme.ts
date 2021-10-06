@@ -39,7 +39,13 @@ const sequelBody = {
 export default responsiveFontSizes(
 	createTheme({
 		typography: {
-			fontFamily: ['"ITC Legacy Sans Std"', '"Sequel Sans Medium Head"', '"Sequel Body"', "sans-serif"].join(","),
+			fontFamily: [
+				'"ITC Legacy Sans Std"',
+				'"Sequel Sans Medium Head"',
+				'"Sequel Body"',
+				'"Legs"',
+				"sans-serif",
+			].join(","),
 		},
 		overrides: {
 			MuiCssBaseline: {

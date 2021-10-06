@@ -25,6 +25,7 @@ export default makeStyles((theme: Theme) =>
 			display: "flex",
 			flexDirection: "row",
 			justifyContent: "flex-start",
+			alignItems: "center",
 			background: "none",
 			cursor: "pointer",
 			border: "none",
@@ -74,6 +75,9 @@ export default makeStyles((theme: Theme) =>
 			"&:hover": {
 				backgroundColor: "rgba(0,0,0,0.1)",
 			},
+		},
+		svg: {
+			marginTop: "0.25rem",
 		},
 	})
 );

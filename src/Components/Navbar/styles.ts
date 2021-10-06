@@ -6,7 +6,7 @@ export default makeStyles((theme: Theme) =>
 		link: {
 			"text-decoration": "none",
 			color: "#777",
-			width: "100%",
+			width: "fit-content",
 		},
 		logoLink: {
 			"text-decoration": "none",

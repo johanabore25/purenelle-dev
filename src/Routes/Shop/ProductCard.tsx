@@ -31,7 +31,11 @@ export const HomeProducts = ({ imgSrc, id, description, shortName }: Partial<Pro
 					<img src={imgSrc} alt={description} width="100%" />
 				</Grid>
 				<Grid item md={12}>
-					<Typography variant="h6" gutterBottom style={{ color: "white", fontWeight: 700 }}>
+					<Typography
+						variant="h6"
+						gutterBottom
+						style={{ color: "white", fontWeight: 700, fontFamily: "Legs" }}
+					>
 						{shortName}
 					</Typography>
 				</Grid>
@@ -39,7 +43,10 @@ export const HomeProducts = ({ imgSrc, id, description, shortName }: Partial<Pro
 					<Divider light={true} variant="fullWidth" style={{ backgroundColor: "white", opacity: "0.5" }} />
 				</Grid>
 				<Grid item md={12}>
-					<Typography variant="subtitle1" style={{ color: "white", textTransform: "capitalize" }}>
+					<Typography
+						variant="subtitle1"
+						style={{ color: "white", textTransform: "capitalize", fontFamily: "Legs" }}
+					>
 						{description}
 					</Typography>
 				</Grid>

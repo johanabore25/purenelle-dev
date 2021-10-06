@@ -25,6 +25,14 @@
 	src: url("./assets/fonts/Sequel-Body.woff") format("woff");
 }
 
+@font-face {
+	font-family: "Legs";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("./assets/fonts/LEGSNSW.woff") format("woff");
+}
+
 @media (prefers-reduced-motion: no-preference) {
 	.App-logo {
 		animation: App-logo-spin infinite 20s linear;

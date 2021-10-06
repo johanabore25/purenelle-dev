@@ -31,5 +31,19 @@ export default makeStyles((theme: Theme) =>
 		bodyText: {
 			fontFamily: "Sequel Body",
 		},
+		sliderWrapper: {
+			"& .slick-dots li": {
+				width: "40px",
+			},
+			"& .slick-prev:before": {
+				color: "#7d7d7d",
+			},
+			"& .slick-next:before": {
+				color: "#7d7d7d",
+			},
+			"& .slick-dots ": {
+				height: "1px",
+			},
+		},
 	})
 );
