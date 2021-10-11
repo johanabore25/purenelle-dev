@@ -12,6 +12,14 @@ export interface BannerInterface {
 	slideContent: SlideInterface[];
 }
 
+export interface CartInterface {
+	id: string;
+	imgSrc: string;
+	shortName: string;
+	count: number;
+	price: number;
+}
+
 export interface FirstSectionProductInterface {
 	imageSrc: string;
 	description: string;

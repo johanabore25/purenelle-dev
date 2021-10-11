@@ -28,5 +28,8 @@ export default makeStyles((theme: Theme) =>
 		rightAlign: {
 			textAlign: "right",
 		},
+		link: {
+			textDecoration: "none",
+		},
 	})
 );

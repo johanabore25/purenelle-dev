@@ -1,52 +1,51 @@
 import React from "react";
-import { Drawer, Box, TextField, Grid, Typography, IconButton } from "@material-ui/core";
-import { Search, X } from "react-feather";
+import { Grid, Typography, TextField } from "@material-ui/core";
+import { Autocomplete } from "@material-ui/lab";
+import { homeProducts } from "../../logic/jsonData";
+import { ProductInterface } from "../../logic/types";
+import * as Icon from "react-feather";
 
-interface Props {
-	open: boolean;
-	close: () => void;
-}
-
-const SearchBar = ({ open, close }: Props) => {
+const SearchBar = () => {
 	return (
 		<div>
-			<Drawer variant="temporary" anchor="bottom" open={open} onClose={close}>
-				<Box sx={{ width: "auto", padding: "3rem", height: "80vh" }} role="presentation">
-					<Grid container justifyContent="center" spacing={2}>
-						<Grid item md={12}>
-							<Box
-								sx={{
-									display: "flex",
-									alignItems: "flex-end",
-									justifyContent: "space-around",
-								}}
-							>
-								<Search />
-								<TextField autoFocus fullWidth placeholder="Search Products" />
-								<IconButton onClick={close}>
-									<X />
-								</IconButton>
-							</Box>
-						</Grid>
-						<Grid item md={12}>
-							<Typography color="primary" variant="h6" gutterBottom>
-								Products(2)
-							</Typography>
-						</Grid>
-						<Grid item md={12} container justifyContent="flex-start" alignItems="center" spacing={2}>
-							<Grid item md={3}>
-								<div
-									style={{
-										width: "100%",
-										height: "400px",
-										backgroundColor: "#ececec",
-									}}
-								></div>
+			<Autocomplete
+				id="product-search"
+				style={{ width: "100%" }}
+				options={homeProducts as ProductInterface[]}
+				autoHighlight
+				getOptionSelected={(option, value) => option.shortName === value.shortName}
+				getOptionLabel={(option) => option.shortName}
+				closeIcon={<Icon.Trash2 size="14px" />}
+				renderOption={(option) => (
+					<React.Fragment>
+						<Grid container spacing={1} justifyContent="space-between" alignItems="center">
+							<Grid item md={4}>
+								<img src={option.imgSrc} width="100%" alt={option.shortName} />
+							</Grid>
+							<Grid item md={8}>
+								<Typography
+									variant="subtitle2"
+									color="primary"
+									style={{ fontFamily: "Sequel Sans Medium Head" }}
+								>
+									{option.shortName}
+								</Typography>
 							</Grid>
 						</Grid>
-					</Grid>
-				</Box>
-			</Drawer>
+					</React.Fragment>
+				)}
+				renderInput={(params) => (
+					<TextField
+						{...params}
+						placeholder="Search Products"
+						variant="standard"
+						inputProps={{
+							...params.inputProps,
+							autoComplete: "new-password",
+						}}
+					/>
+				)}
+			/>
 		</div>
 	);
 };

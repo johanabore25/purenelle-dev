@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import { toast } from "react-toastify";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import history from "./appHistory";
 import { Router } from "react-router-dom";
+
+toast.configure();
 
 ReactDOM.render(
 	<React.StrictMode>

@@ -12,7 +12,7 @@ const SignUp = () => {
 				<Grid item md={6} container spacing={2}>
 					<Grid item md={12}>
 						<Typography variant="h4" color="primary" gutterBottom className={classes.titleText}>
-							Create Account
+							Create An Account
 						</Typography>
 					</Grid>
 					<Grid item md={6}>
@@ -25,6 +25,9 @@ const SignUp = () => {
 						<TextField variant="outlined" fullWidth placeholder="Email" />
 					</Grid>
 					<Grid item md={6}>
+						<TextField variant="outlined" fullWidth placeholder="Phone Number" />
+					</Grid>
+					<Grid item md={12}>
 						<TextField variant="outlined" fullWidth placeholder="Password" />
 					</Grid>
 					<Grid item container md={12} justifyContent="flex-start" alignItems="center" spacing={2}>

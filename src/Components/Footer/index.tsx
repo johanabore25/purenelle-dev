@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Typography, Grid, TextField, Button } from "@material-ui/core";
 import { SocialIcon } from "react-social-icons";
 import useStyles from "./styles";
@@ -36,9 +37,11 @@ const Footer = () => {
 					<Typography variant="subtitle1" className={classes.text} gutterBottom>
 						Covid-19
 					</Typography>
-					<Typography variant="subtitle1" className={classes.text} gutterBottom>
-						Contact Us
-					</Typography>
+					<Link to="/contact" className={classes.link}>
+						<Typography variant="subtitle1" className={classes.text} gutterBottom>
+							Contact Us
+						</Typography>
+					</Link>
 				</Grid>
 				<Grid item md={6} container justifyContent="flex-end" alignItems="center" spacing={1}>
 					<Grid item md={12}>

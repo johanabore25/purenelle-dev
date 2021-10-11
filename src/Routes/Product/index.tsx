@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
 import Slider from "react-slick";
-import { Grid, Typography, Button, CircularProgress, IconButton } from "@material-ui/core";
+import { Grid, Typography, Button, CircularProgress, IconButton, TextField } from "@material-ui/core";
+import { useCartStore } from "../../logic/useStore";
 import { ProductData } from "../../logic/jsonData";
 import { RatingView } from "react-simple-star-rating";
 import * as Icon from "react-feather";
@@ -12,9 +13,12 @@ type TParams = { id: string };
 const Product = ({ match }: RouteComponentProps<TParams>) => {
 	const classes = useStyles({});
 	const [loading, setLoading] = React.useState(true);
+	const [count, setCount] = React.useState(1);
 	let { id } = match.params;
 
 	let newId = parseInt(id);
+
+	const { addItem } = useCartStore();
 
 	React.useEffect(() => {
 		if (typeof newId !== undefined) {
@@ -77,7 +81,7 @@ const Product = ({ match }: RouteComponentProps<TParams>) => {
 								alignContent="space-between"
 								style={{ marginLeft: "8rem" }}
 							>
-								<Grid item md={12} container justifyContent="center">
+								<Grid item md={12} container alignItems="center" justifyContent="center" spacing={2}>
 									<Grid item md={12}>
 										<Typography
 											variant="h4"
@@ -101,8 +105,31 @@ const Product = ({ match }: RouteComponentProps<TParams>) => {
 											{ProductData[newId].volume}
 										</Typography>
 									</Grid>
-									<Grid item md={12}>
-										<Button variant="contained" fullWidth color="secondary">
+									<Grid item md={3}>
+										<TextField
+											size="small"
+											color="primary"
+											variant="outlined"
+											type="number"
+											value={count}
+											onChange={(e) => setCount(Number(e.target.value))}
+										/>
+									</Grid>
+									<Grid item md={9}>
+										<Button
+											variant="contained"
+											fullWidth
+											color="secondary"
+											onClick={() =>
+												addItem(
+													id,
+													ProductData[newId].imgSrc,
+													count,
+													ProductData[newId].shortName,
+													400
+												)
+											}
+										>
 											Add to Cart
 										</Button>
 									</Grid>

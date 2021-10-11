@@ -1,14 +1,15 @@
 import * as React from "react";
 import { Link, useHistory } from "react-router-dom";
 // Material Core
-
-import { AppBar, Toolbar, Grid, useScrollTrigger, Typography } from "@material-ui/core";
+import { AppBar, Toolbar, Grid, useScrollTrigger, Typography, Grow } from "@material-ui/core";
 import useStyles from "./styles";
 // Icons
 import * as Icon from "react-feather";
 // components
 import DropDownButton from "../DropDownButton";
 import SearchBar from "../SearchBar";
+import Cart from "../Cart";
+import { useCartStore } from "../../logic/useStore";
 
 interface Props {
 	children: React.ReactElement;
@@ -31,12 +32,17 @@ const NavBar = () => {
 	const history = useHistory();
 
 	const [open, setOpen] = React.useState(false);
+	const [bagOpen, setBagOpen] = React.useState(false);
+	const { items } = useCartStore();
+	const toggleBag = () => {
+		setBagOpen(!bagOpen);
+	};
 
-	const drawerClose = () => {
+	const searchClose = () => {
 		setOpen(false);
 	};
 
-	const drawerOpen = () => {
+	const searchOpen = () => {
 		setOpen(true);
 	};
 
@@ -99,10 +105,16 @@ const NavBar = () => {
 									<img src="/Purenelle-Logo-Concept-1.jpg" alt="purenelle logo" width="30%" />
 								</Link>
 							</Grid>
+
 							<Grid item container md={4} justifyContent="flex-end" alignItems="center">
+								<Grow in={open}>
+									<Grid item md={6}>
+										<SearchBar />
+									</Grid>
+								</Grow>
 								<Grid item md={2}>
 									<button
-										onClick={drawerOpen}
+										onClick={open ? searchClose : searchOpen}
 										style={{
 											width: "fit-content",
 											background: "none",
@@ -110,7 +122,11 @@ const NavBar = () => {
 											cursor: "pointer",
 										}}
 									>
-										<Icon.Search color="#a3a3a3" size="25%" />
+										{open ? (
+											<Icon.X color="#a3a3a3" size="30%" />
+										) : (
+											<Icon.Search color="#a3a3a3" size="30%" />
+										)}
 									</button>
 								</Grid>
 								<Grid item md={2}>
@@ -123,11 +139,12 @@ const NavBar = () => {
 											cursor: "pointer",
 										}}
 									>
-										<Icon.User color="#a3a3a3" size="25%" />
+										<Icon.User color="#a3a3a3" size="30%" />
 									</button>
 								</Grid>
 								<Grid item md={2}>
 									<button
+										onClick={toggleBag}
 										style={{
 											width: "fit-content",
 											background: "none",
@@ -135,7 +152,7 @@ const NavBar = () => {
 											cursor: "pointer",
 										}}
 									>
-										<Icon.ShoppingBag color="#a3a3a3" size="25%" />
+										<Icon.ShoppingBag color={items.length > 0 ? "#F61067" : "#a3a3a3"} size="30%" />
 									</button>
 								</Grid>
 							</Grid>
@@ -143,7 +160,7 @@ const NavBar = () => {
 					</Toolbar>
 				</AppBar>
 			</ElevationScroll>
-			<SearchBar open={open} close={drawerClose} />
+			<Cart open={bagOpen} onClose={toggleBag} />
 		</>
 	);
 };

@@ -111,25 +111,25 @@ export const homeProducts: Partial<ProductInterface>[] = [
 	{
 		id: 1,
 		imgSrc: "/assets/Images/products/Micerlla.jpg",
-		shortName: "Micellar cleansing water",
-		description: "for cleansing, soothing and make up removal",
+		shortName: "Micellar Cleansing Water",
+		description: "For Cleansing, Soothing And Make Up Removal",
 	},
 	{
 		id: 2,
 		imgSrc: "/assets/Images/products/noHarm.jpg",
-		shortName: "No harm cleansing foaming gel",
-		description: "Facial cleanser that removes impurities and dead skin cells",
+		shortName: "No Harm Cleansing Foaming Gel",
+		description: "Facial Cleanser That Removes Impurities And Dead Skin Cells",
 	},
 	{
 		id: 3,
 		imgSrc: "/assets/Images/products/Anti-Ageing.jpg",
-		shortName: "Daily anti-ageing day moisturiser",
+		shortName: "Daily Anti-Ageing Day Moisturiser",
 		description: "Helps minimize the appearance of wrinkles and the effects of photoaging",
 	},
 	{
 		id: 4,
 		imgSrc: "/assets/Images/products/radiance.jpg",
-		shortName: "Pro radiance primer",
+		shortName: "Pro Radiance Primer",
 		description: "PRO RADIANCE (Even tone and Hydrating) PRIMER",
 	},
 ];
